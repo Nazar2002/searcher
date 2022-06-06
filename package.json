@@ -1,6 +1,6 @@
 {
-  "name": "test-task",
-  "homepage": "https://tomerpacific.github.io/starter-project/",
+  "name": "searcher",
+  "homepage": "https://nazar2002.github.io/searcher/",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
