@@ -1,6 +1,6 @@
 export enum RouteEnum {
   main = '/',
-  user = 'user',
+  user = '/user',
 }
 
 export enum UrlsEnum {
