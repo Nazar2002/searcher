@@ -1,9 +1,10 @@
 import React, { ChangeEvent, FC, memo, useEffect } from 'react';
-import { useParams } from 'react-router-dom';
+import { Link, useParams } from 'react-router-dom';
 import { getRepositories, getUser, repositoryInfoActions } from '../../store/slices';
 import { useAppDispatch, useAppSelector } from '../../hooks';
 import { RepositoryItem, Loader } from '../../components';
 import { timeFormat } from '../../utils';
+import { RouteEnum } from '../../common-types';
 import './style.scss';
 
 export const UserProfile: FC = memo(function UserProfile() {
@@ -26,7 +27,9 @@ export const UserProfile: FC = memo(function UserProfile() {
 
   return (
     <div className="users-searcher">
-      <h1>Git hub Searcher</h1>
+      <Link to={RouteEnum.main}>
+        <h1>Git hub Searcher</h1>
+      </Link>
       <div className="user-page">
         <div className="user-page__image">
           <img alt="user-image" src={user?.avatar_url} />
