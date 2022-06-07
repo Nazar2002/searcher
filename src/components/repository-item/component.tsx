@@ -6,14 +6,15 @@ export const RepositoryItem: FC<IRepository> = ({
   name,
   stargazers_count,
   forks_count,
+  html_url,
 }: IRepository) => {
   return (
-    <div className="repository-item">
+    <a href={html_url} target="_blank" rel="noreferrer" className="repository-item">
       <p>Repository name: {name}</p>
       <div>
         <p>Forks: {forks_count}</p>
         <p>Stars: {stargazers_count}</p>
       </div>
-    </div>
+    </a>
   );
 };

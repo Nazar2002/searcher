@@ -4,6 +4,8 @@ import { getRepositories, getUser, repositoryInfoActions } from '../../store/sli
 import { useAppDispatch, useAppSelector } from '../../hooks';
 import { RepositoryItem, Loader } from '../../components';
 import './style.scss';
+import { timeFormat } from '../../utils';
+import { Moment } from 'moment';
 
 export const UserProfile: FC = memo(function UserProfile() {
   const dispatch = useAppDispatch();
@@ -41,7 +43,7 @@ export const UserProfile: FC = memo(function UserProfile() {
             Location: <span>{user?.location}</span>
           </p>
           <p>
-            Join date: <span>{user?.created_at}</span>
+            Join date: <span>{timeFormat(user?.created_at)}</span>
           </p>
           <p>
             User followers: <span>{user?.followers}</span>
@@ -78,6 +80,7 @@ export const UserProfile: FC = memo(function UserProfile() {
                 name={el.name}
                 forks_count={el.forks_count}
                 stargazers_count={el.stargazers_count}
+                html_url={el.html_url}
               />
             ))}
           </>

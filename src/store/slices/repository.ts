@@ -53,6 +53,7 @@ export const getRepositories =
           forks_count: el.forks_count,
           name: el.name,
           stargazers_count: el.stargazers_count,
+          html_url: el.html_url,
         };
       });
 
