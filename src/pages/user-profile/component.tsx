@@ -3,9 +3,8 @@ import { useParams } from 'react-router-dom';
 import { getRepositories, getUser, repositoryInfoActions } from '../../store/slices';
 import { useAppDispatch, useAppSelector } from '../../hooks';
 import { RepositoryItem, Loader } from '../../components';
-import './style.scss';
 import { timeFormat } from '../../utils';
-import { Moment } from 'moment';
+import './style.scss';
 
 export const UserProfile: FC = memo(function UserProfile() {
   const dispatch = useAppDispatch();

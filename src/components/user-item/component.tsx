@@ -1,4 +1,4 @@
-import React, { FC } from 'react';
+import React, { FC, memo } from 'react';
 import { Link } from 'react-router-dom';
 import { RouteEnum } from '../../common-types';
 import './style.scss';
@@ -9,7 +9,11 @@ interface IProps {
   repositoryUrl: string;
 }
 
-export const UserItem: FC<IProps> = ({ login, image, repositoryUrl }: IProps) => {
+export const UserItem: FC<IProps> = memo(function UserItem({
+  login,
+  image,
+  repositoryUrl,
+}: IProps) {
   return (
     <div className="user-item">
       <Link to={`${RouteEnum.user}/${login}`}>
@@ -25,4 +29,4 @@ export const UserItem: FC<IProps> = ({ login, image, repositoryUrl }: IProps) =>
       </Link>
     </div>
   );
-};
+});

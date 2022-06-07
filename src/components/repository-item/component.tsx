@@ -1,13 +1,13 @@
-import React, { FC } from 'react';
+import React, { FC, memo } from 'react';
 import { IRepository } from '../../common-types';
 import './style.scss';
 
-export const RepositoryItem: FC<IRepository> = ({
-  name,
+export const RepositoryItem: FC<IRepository> = memo(function RepositoryItem({
+  html_url,
   stargazers_count,
   forks_count,
-  html_url,
-}: IRepository) => {
+  name,
+}: IRepository) {
   return (
     <a href={html_url} target="_blank" rel="noreferrer" className="repository-item">
       <p>Repository name: {name}</p>
@@ -17,4 +17,4 @@ export const RepositoryItem: FC<IRepository> = ({
       </div>
     </a>
   );
-};
+});
