@@ -11,3 +11,16 @@
     line-height: 20px;
   }
 }
+
+@media (max-width: 575px) {
+  .repository-item {
+    flex-direction: column;
+    align-items: flex-start;
+    grid-gap: 10px;
+
+    >div {
+      display: grid;
+      grid-gap: 10px;
+    }
+  }
+}

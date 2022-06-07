@@ -36,3 +36,42 @@
     line-height: 20px;
   }
 }
+
+@media (max-width: 992px) {
+  .user-item {
+    .hidden-text {
+      max-width: 250px;
+    }
+  }
+}
+
+@media (max-width: 768px) {
+  .user-item {
+    a {
+      flex-direction: column;
+      align-items: flex-start;
+      grid-gap: 20px;
+    }
+  }
+}
+
+@media (max-width: 575px) {
+  .user-item {
+    a {
+      div {
+        flex-direction: column;
+      }
+    }
+
+    .hidden-text {
+      max-width: 300px;
+    }
+
+    &__image {
+      img {
+        width: 100%;
+        height: 100%;
+      }
+    }
+  }
+}

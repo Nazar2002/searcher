@@ -52,3 +52,14 @@ h4 {
   display: grid;
   grid-gap: 20px;
 }
+
+
+@media (max-width: 575px) {
+  h1 {
+    font-size: 30px;
+  }
+
+  .users-searcher {
+    padding: 20px;
+  }
+}
