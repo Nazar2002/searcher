@@ -1,0 +1,17 @@
+name: Link
+on: push
+jobs:
+  lint:
+    runs-on: ubuntu-latest
+    steps:
+      - name: checkout
+        uses: actions/checkout@v4
+      - name: Install deps
+        run: npm ci
+      - name: Lint
+        run: npm run lint
+  checkout:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Just echo
+        run: echo "Set the Octocat variable"
