@@ -14,8 +14,19 @@ jobs:
         run: npm ci
       - name: Lint
         run: npm run lint
-  checkout:
+  node-check:
+    needs: [lint]
+    strategy:
+      matrix:
+        version: [16, 16]
     runs-on: ubuntu-latest
     steps:
-      - name: Just echo
-        run: echo "Set the Octocat variable"
+      - name: checkout
+        uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: ${{ matrix.version }}
+      - name: Install deps
+        run: npm ci
+      - name: Say ok
+        run: echo "${{ secrets.TEST }}"
